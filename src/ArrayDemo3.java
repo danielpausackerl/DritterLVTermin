@@ -2,29 +2,33 @@
 public class ArrayDemo3 {
 
 	public static void main(String[] args) {
-		// Übung #11
 
-		int array[] = new int[10];
-		int ergebnis = 0;
+		int[] numbers = { 4, 17, 31, 0, 5, 9, 24, 90, 7, 88 };
 
-		array[0] = 3;
-		array[1] = 5;
-		array[2] = 6;
-		array[3] = 8;
-		array[4] = 1;
-		array[5] = 0;
-		array[6] = 6;
-		array[7] = 4;
-		array[8] = 8;
-		array[9] = 5;
+		long sum = 0;
+		for (int n = 0; n < numbers.length; n++) {
+			sum += numbers[n];
+		}
+		System.out.println("SUM: " + sum);
 
-		for (int i = 0; i < 10; i++) {
-			ergebnis += array[i];
+		int check = 90;
 
+		System.out.println("contains " + check + "? " + containsNumber(numbers, check));
+
+		check = 10;
+		System.out.println("contains " + check + "? " + containsNumber(numbers, check));
+
+	}
+
+	public static boolean containsNumber(int[] numbers, int n) {
+
+		for (int i = 0; i < numbers.length; i++) {
+			if (numbers[i] == n) {
+				return true;
+			}
 		}
 
-		System.out.println(ergebnis);
-
+		return false;
 	}
 
 }
